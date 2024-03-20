@@ -17,15 +17,15 @@ export default function Home() {
     <Top 
     onClick={scrollToBottom}
     />
-    <Skill />
+    {/* <Skill /> */}
     
-    <Projets
+    {/* <Projets
     onClick={scrollToBottom}
-    />
+    /> */}
     
-    <div ref={Contact} className="Scroll">
+    {/* <div ref={Contact} className="Scroll">
       <Bottom /> 
-    </div>
+    </div> */}
   </>
   );
 }

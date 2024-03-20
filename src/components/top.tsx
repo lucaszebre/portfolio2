@@ -1,12 +1,16 @@
 import Image from 'next/image'
 import React from 'react'
+import Parallax from './parallax'
 
 
 const Top = (props: { onClick: React.MouseEventHandler<HTMLDivElement> | undefined }) => {
     return (
     <div className="flex flex-col items-center justify-center w-full">
-        <Image width={100}  height={100} className="absolute top-0 left-0 z-10" src={'/assets/images/pattern-rings.svg'} alt="background-pattern" />
-        <div className="flex flex-col items-center w-80 relative">
+        <Parallax />
+        {/* <div className='relative '>
+        <Image fill className="absolute top-0 left-0 z-10" src={'/assets/images/pattern-rings.svg'} alt="background-pattern" />
+        </div> */}
+        <div className="flex flex-col items-center w-[80%] relative">
             <div className="flex flex-row items-center justify-between w-full py-4">
                 <a href="" download>
                     <h1 className='text-white text-2xl font-bold'>lucaszebre</h1>
@@ -29,10 +33,17 @@ const Top = (props: { onClick: React.MouseEventHandler<HTMLDivElement> | undefin
                 </div>
                 <div onClick={props.onClick} className="cursor-pointer text-white text-2xl font-normal mt-8 underline">CONTACT ME</div>
             </div>
-            <Image width={100}  height={100} className='hidden md:block w-96 h-auto absolute z-0 top-0 right-0' src={'/assets/images/PhotoDesktop.png'} alt="Photo de lucas zebre " />
+            <div className='relative w-96 h-auto'>
+            <Image fill className='hidden md:block  absolute z-0 top-0 right-0' src={'/assets/images/PhotoDesktop.png'} alt="Photo de lucas zebre " />
+            </div>
         </div>
-        <Image width={100}  height={100} className='hidden md:block w-96 h-auto absolute z-0 top-0 right-0' src={'/assets/images/PhotoTablet.png'} alt="Photo de lucas zebre " />
-        <Image width={100}  height={100} className='md:hidden w-1/2 h-auto absolute z-0 top-0' src={'/assets/images/PhotoMobile.png'} alt="Photo de lucas zebre " />
+        <div className='relative w-96 h-auto'>
+        <Image fill className='hidden md:block  absolute z-0 top-0 right-0' src={'/assets/images/PhotoTablet.png'} alt="Photo de lucas zebre " />
+        </div>
+        <div className='relative  w-1/2 h-auto'>
+        <Image fill className='md:hidden  absolute z-0 top-0' src={'/assets/images/PhotoMobile.png'} alt="Photo de lucas zebre " />
+
+        </div>
     </div>
     )
 }
